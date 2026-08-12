@@ -1,0 +1,13 @@
+CLBOS01 RIGOROUS RUNTIME SYSTEM SNAPSHOT
+
+platform=Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+python=3.10.12
+processor=x86_64
+cpu_count=12
+repeats=5
+warmup=one MST probe + one Full call per field
+method_order=alternated by repeat
+parallel_execution=false
+timing_scope=end-to-end Python driver wall clock including subprocess overhead
+hierarchical=current conservative implementation; selected Full calls recompute upstream
+Fields2Cover_HEAD=92b9f2fcf72d26c44202f9d2ab54fbf25ed87426

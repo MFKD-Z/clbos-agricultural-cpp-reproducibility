@@ -1,0 +1,7 @@
+analysis,epsilon_m,field_count,exact_recovery_count,angle_match_count,median_full_calls,mean_full_calls,worst_case_full_calls
+epsilon_lsw_only_replay,0.0,42,42,42,4.0,6.166666666666667,28
+epsilon_lsw_only_replay,1e-12,42,42,42,4.0,6.166666666666667,28
+epsilon_lsw_only_replay,1e-09,42,42,42,4.0,6.166666666666667,28
+epsilon_lsw_only_replay,1e-06,42,42,42,4.0,6.166666666666667,28
+epsilon_lsw_only_replay,0.0001,42,42,42,4.0,6.166666666666667,28
+epsilon_lsw_only_replay,0.001,42,42,42,4.0,6.166666666666667,28

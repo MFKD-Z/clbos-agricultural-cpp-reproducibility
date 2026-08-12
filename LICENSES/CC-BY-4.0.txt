@@ -1,0 +1,22 @@
+Creative Commons Attribution 4.0 International
+
+SPDX-License-Identifier: CC-BY-4.0
+
+The project-authored material expressly assigned to this license by
+LICENSE.md and LICENSE_SCOPE_MAP.csv is licensed under the Creative Commons
+Attribution 4.0 International Public License.
+
+Official license notice:
+
+This work is licensed under a Creative Commons Attribution 4.0 International
+License.
+
+To view the official legal code, visit:
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Canonical license URI:
+https://creativecommons.org/licenses/by/4.0/
+
+This notice does not apply CC BY 4.0 to third-party material or to material
+identified as subject to upstream rights in LICENSE.md,
+LICENSE_SCOPE_MAP.csv, or THIRD_PARTY.md.

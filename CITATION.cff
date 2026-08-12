@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite this reproducibility package."
+title: "Cross-Stage Objective Mismatch and Certified Elimination of Downstream Evaluations in Agricultural Coverage Path Planning"
+type: software
+version: 1.0.0
+authors:
+  - given-names: Yunji
+    family-names: Zhou
+    affiliation: "School of Mechanical Engineering, Sichuan University, Chengdu, China"
+  - given-names: Yang
+    family-names: Chen
+    affiliation: "School of Mechanical Engineering, Sichuan University, Chengdu, China"
+  - given-names: Qingyu
+    family-names: Wang
+    affiliation: "School of Mechanical Engineering, Sichuan University, Chengdu, China"
+  - given-names: Shunjie
+    family-names: Chen
+    affiliation: "School of Mechanical Engineering, Sichuan University, Chengdu, China"
+  - given-names: Miao
+    family-names: Yu
+    affiliation: "School of Mechanical Engineering, Sichuan University, Chengdu, China"
+    email: "miaoyu@scu.edu.cn"

@@ -1,0 +1,4 @@
+matplotlib>=3.7,<4
+pyproj==3.6.1
+shapely==2.0.6
+

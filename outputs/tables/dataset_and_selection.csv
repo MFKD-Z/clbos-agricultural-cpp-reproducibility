@@ -1,0 +1,10 @@
+metric,value
+source_wkt_count,350
+usable_prepared_inventory_count,349
+preprocessing_exclusion_count,1
+heldout_field_count,90
+heldout_overlap_with_development_count,0
+heldout_inventory_sha_mismatch_count,0
+heldout_CONVEX_NO_HOLES,30
+heldout_HAS_HOLES_OR_INTERNAL_OBSTACLES,30
+heldout_NONCONVEX_NO_HOLES,30

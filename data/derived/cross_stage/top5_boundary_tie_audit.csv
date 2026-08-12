@@ -1,0 +1,2 @@
+field_id,family,sorting_policy,k,lsw_tie_tolerance_m,kth_lsw_threshold_m,boundary_tie_size,boundary_tie_angles,excluded_boundary_tie_size,excluded_boundary_tie_angles,excluded_boundary_contains_jstar,excluded_boundary_jstar_angles,oracle_best_angle_deg,oracle_angle_lsw_m,oracle_lsw_strict_rank_start,oracle_lsw_tie_rank_end,top5_failure_tie_dependent,new_full_calls
+HOLD_HAS_HOLES_OR_INTERNAL_OBSTACLES_03,HAS_HOLES_OR_INTERNAL_OBSTACLES,"lexicographic_(Lsw,angle_deg)_ascending",5,1e-06,42.498998047229,1,149,0,,False,,57,52.039278729373,8,8,False,0

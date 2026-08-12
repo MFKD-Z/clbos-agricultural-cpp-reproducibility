@@ -1,0 +1,15 @@
+CLBOS01 HELD-OUT TOP-K SELECTION SNAPSHOT
+
+Selection uses geometry metadata only. No FullPlanner, Top-K, regret,
+oracle rank, CLBOS call count, or downstream outcome is read.
+
+Prior selected unique SHA excluded: 57
+Remaining exact-SHA-unique family counts: {'CONVEX_NO_HOLES': 35, 'NONCONVEX_NO_HOLES': 227, 'HAS_HOLES_OR_INTERNAL_OBSTACLES': 30}
+Selected per family: 30
+Total held-out fields: 90
+Rule: deterministic area-rank equal-bin midpoint within each family
+after excluding all previously selected geometry SHA identities.
+
+CONVEX_NO_HOLES: n=30 area_min=5062.936 area_median=22553.563 area_max=141746.974
+NONCONVEX_NO_HOLES: n=30 area_min=5564.060 area_median=21360.840 area_max=153932.757
+HAS_HOLES_OR_INTERNAL_OBSTACLES: n=30 area_min=5188.126 area_median=30005.538 area_max=84962.201

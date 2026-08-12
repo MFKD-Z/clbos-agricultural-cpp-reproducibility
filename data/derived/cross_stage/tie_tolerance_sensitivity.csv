@@ -1,0 +1,5 @@
+tie_tolerance_m,aligned_deterministic_bf,overlapping_upstream_tie_bf_miss,disjoint_argmin_pure_mismatch,fields_with_multiple_lsw_minimizers,max_argmin_lsw_size
+0.0,65,0,25,0,1
+1e-12,65,0,25,0,1
+1e-09,65,0,25,0,1
+1e-06,65,0,25,0,1
