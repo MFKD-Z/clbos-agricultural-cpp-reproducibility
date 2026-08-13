@@ -1,0 +1,74 @@
+{
+  "built_on": "2026-08-13",
+  "v1_zenodo_version_doi": "10.5281/zenodo.21900840",
+  "new_evidence": {
+    "E1": {
+      "T1": {
+        "fields": 60,
+        "top10_exact": 60,
+        "clbos_exact": 60,
+        "kmin": 6,
+        "clbos_nfull": 474,
+        "top10_nfull": 600
+      },
+      "T2": {
+        "fields": 30,
+        "top10_exact": 30,
+        "clbos_exact": 30,
+        "kmin": 3,
+        "clbos_nfull": 345,
+        "top10_nfull": 300
+      },
+      "T3": {
+        "fields": 24,
+        "top10_exact": 24,
+        "clbos_exact": 24,
+        "kmin": 8,
+        "clbos_nfull": 298,
+        "top10_nfull": 240
+      }
+    },
+    "E2": {
+      "paired_fields": 30,
+      "nfull_a": 184,
+      "nfull_b": 345,
+      "increase": 17,
+      "same": 13,
+      "decrease": 0,
+      "median_delta_p90_abs_gap_m": 565.7143117154692,
+      "rho_delta_gap_delta_nfull": 0.1750622254727825
+    },
+    "E2R1": {
+      "fields": 60,
+      "coverage": 1.0,
+      "incomplete": 0,
+      "violations": 0,
+      "rho_rel_gap": -0.40664235190669573,
+      "rho_abs_gap": 0.01621127859566699,
+      "rho_lsw": 0.3396432914169112,
+      "rho_feasible": 0.5361298713974709
+    },
+    "E3": {
+      "fields": 18,
+      "repeats": 5,
+      "failed_runs": 0,
+      "clbos_exact": 18,
+      "top10_exact": 18,
+      "clbos_faster": 18,
+      "median_speedup": 7.432641449183674,
+      "aggregate_speedup": 10.513672305134834,
+      "runtime_reduction": 0.904885755331027,
+      "bound_fraction": 0.9089732889916979,
+      "premium_ratio": 5.888446750192219
+    }
+  },
+  "interpretive_limits": [
+    "Top-10 remained exact in all tested transfer domains; no fixed-K transfer failure is claimed.",
+    "The turning-radius intervention supports an aggregate directional sensitivity result, not a universal field-level mechanism.",
+    "The 60-field secondary analysis does not support a simple P90 relaxation-gap explanation of field-level certification effort.",
+    "The Top-10 runtime reference omits ranking acquisition and is not an equal-scope runtime comparison.",
+    "The runtime subset is stratified across benchmark geometry families and is not a deployment-population sample.",
+    "Certification is mathematical over the stated finite-domain/exact-arithmetic model; IEEE-754 formal verification is not claimed."
+  ],
+  "release_version": "2.0.0"
+}

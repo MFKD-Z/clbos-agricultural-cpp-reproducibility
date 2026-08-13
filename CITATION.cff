@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Please cite this reproducibility package."
-title: "Cross-Stage Objective Mismatch and Certified Elimination of Downstream Evaluations in Agricultural Coverage Path Planning"
+title: "Certified Lower-Bound Orientation Search under Cross-Stage Objective Mismatch in Agricultural Coverage Path Planning"
 type: software
-version: 1.0.0
+version: 2.0.0
 authors:
   - given-names: Yunji
     family-names: Zhou

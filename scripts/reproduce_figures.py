@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild manuscript Figs. 2–4 from packaged frozen CSV evidence."""
+"""Rebuild manuscript Figs. 2–3 and Supplementary Fig. S1 from packaged frozen CSV evidence."""
 
 from __future__ import annotations
 
@@ -164,7 +164,7 @@ def make_figure4(plt: object, PercentFormatter: object) -> None:
     axes[1].set(xlabel="CLBOS-MST complete downstream evaluations", ylabel="Empirical cumulative probability", ylim=(0, 1.02))
     axes[1].set_title("(b) Heavy-tail profile of CLBOS-MST", fontsize=9.5)
     axes[1].yaxis.set_major_formatter(PercentFormatter(xmax=1.0, decimals=0))
-    save(fig, "figure4_heldout_distribution_color", plt)
+    save(fig, "supplementary_figure_s1_certification_effort_ecdf", plt)
 
 
 def main() -> int:

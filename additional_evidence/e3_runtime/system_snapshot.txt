@@ -1,0 +1,20 @@
+CLBOS E3 REPRESENTATIVE RUNTIME SYSTEM SNAPSHOT
+platform=Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+python=3.10.12
+processor=x86_64
+cpu_count=12
+formal_run=True
+field_count=18
+repeats=5
+resolution=1deg
+candidate_count=180
+warmup=one MST probe + one Full call per field using a known feasible orientation
+parallel_execution=false
+timing_scope_EXHAUSTIVE=end-to-end Python driver wall clock including subprocess overhead
+timing_scope_CLBOS_MST=end-to-end Python driver wall clock including subprocess overhead
+timing_scope_TOP10=downstream-only Full calls from precomputed SwathLength ranking; favorable to Top10
+clbos_implementation=current conservative implementation; selected Full calls recompute upstream
+Fields2Cover_HEAD=92b9f2fcf72d26c44202f9d2ab54fbf25ed87426
+MST_BIN_SHA256=b3e5c3fe373a345cbea88480e2e072a0efe7b9fa3aec13ebccdeb8ef432b0260
+FULL_BIN_SHA256=4c89a57f2ffe4d1bd00f42e7743936297217cb2e91971062eaf61f3046712f4c
+SCRIPT_SHA256=837327121dedbd385e2cf53657afcc4dacce50113816c6b305e12436f6f05e6c

@@ -1,53 +1,87 @@
 # Reproduction guide
 
-## Level A: analysis only
+## Level A: manuscript-facing numerical reproduction
 
 Requirements: Python 3.10+.
 
+Core evidence:
+
 ```bash
-python scripts/reproduce_numbers.py
-python scripts/verify_package.py
+python3 scripts/reproduce_numbers.py
 ```
 
-`reproduce_numbers.py` resolves every input relative to its own package root, so it can run from any current directory. It rewrites only `outputs/tables`. It makes no network request and imports no planner code.
+v2-added evidence:
+
+```bash
+python3 scripts/reproduce_v2_added.py
+```
+
+Both scripts resolve inputs relative to the package root. They make no network
+requests and perform no Fields2Cover calls.
 
 For figures:
 
 ```bash
-python -m pip install -r environment/python_requirements.txt
-python scripts/reproduce_figures.py
+python3 -m pip install -r environment/python_requirements.txt
+python3 scripts/reproduce_figures.py
+python3 scripts/reproduce_runtime_figure.py
 ```
 
-## Level B: pipeline reconstruction
+`reproduce_figures.py` rebuilds manuscript Figs. 2–3 and Supplementary Fig. S1.
+`reproduce_runtime_figure.py` rebuilds a data-level representation of final
+Fig. 4 from the packaged 18-field runtime records.
 
-1. Clone https://github.com/Fields2Cover/Fields2Cover and check out `92b9f2fcf72d26c44202f9d2ab54fbf25ed87426` in detached state.
-2. Keep the checkout clean. Do not apply project patches to it.
-3. Download Fields2Benchmark record 14524735 using `src/selection/fetch_fields2benchmark.py`.
-4. Run `src/selection/prepare_fields.py` to recreate inventory/projection metadata and materialized WKT files.
-5. Verify each materialized WKT against `data/provenance/field_inventory.csv` and each frozen selection against its `source_wkt_sha256`.
-6. Configure the independent runner with `cmake -S src/runner -B <build-dir> -DF2C_SOURCE_DIR=<Fields2Cover-source>` and build.
-7. Set `CLBOS_WORK_ROOT` to a reconstructed work tree containing the original stage directory names and `CLBOS_RUNTIME_ROOT` to the runtime root containing `Fields2Cover-build` and `selected_wkts`.
-8. Run only the required orchestration script. Each formal script uses a 900-second per-action timeout and resumable CSV append semantics.
+## Level B: planner reconstruction
 
-The formal 1° entry point is `src/orchestration/external_competitors_1deg_90.py`. It performs a 180-orientation cheap-bound sweep per held-out field, orders candidates by MST lower bound, and calls the full runner until the certificate stops. `oksanen_matched_1deg_90.py` implements the stated matched discrete adaptation. The 42-field and runtime entries are named directly by their files.
+1. Clone `https://github.com/Fields2Cover/Fields2Cover`.
+2. Check out revision `92b9f2fcf72d26c44202f9d2ab54fbf25ed87426`.
+3. Keep the upstream checkout clean; do not modify Fields2Cover source.
+4. Obtain Fields2Benchmark Zenodo record `14524735`.
+5. Use `src/selection/fetch_fields2benchmark.py` and
+   `src/selection/prepare_fields.py` to reconstruct the field inventory and
+   local projected geometries.
+6. Verify reconstructed geometries against the packaged SHA-256 provenance.
+7. Configure the independent runner:
+
+```bash
+cmake -S src/runner -B <build-dir> -DF2C_SOURCE_DIR=<Fields2Cover-source>
+cmake --build <build-dir>
+```
+
+8. Use the core orchestration sources under `src/orchestration/` for the
+   original held-out/hierarchy experiments.
+9. The exact executed E1/E2/E3 source snapshots are retained under
+   `additional_evidence/provenance_source_snapshots/`. Because those snapshots
+   were originally run in a project workspace, absolute local paths have been
+   sanitized in this public copy. Their scientific constants and algorithms are
+   retained for audit; the portable Level-A scripts above are the supported
+   manuscript-facing reproduction path for the added evidence.
 
 ## Planner configuration
 
-- Angular domain: 0–179° in 1° increments for the final held-out evaluation; 0–175° in 5° increments for the 42-field hierarchy.
-- Robot width and coverage width: 2 m.
-- Body-length protocol binding: 6 m (recorded as protocol metadata; not consumed by the Fields2Cover path planner).
-- Minimum turning radius: 2 m.
-- Headland: fixed 6 m construction.
+- Primary angular domain: 0–179° in 1° increments.
+- Development hierarchy: 0–175° in 5° increments.
+- Resolution-transfer domain: 0.5° increments where stated.
+- Coverage width: 2 m.
+- Robot width: 2 m.
+- Baseline minimum turning radius: 2 m.
+- Controlled transfer minimum turning radius: 2.8 m.
+- Headland: 6 m.
 - Decomposition: trapezoidal.
 - Swath objective: SwathLength.
-- Route: Fields2Cover `RoutePlannerBase` shortest route.
-- Path: Dubins curves and PathLength.
-- Certificate epsilon: 1e-6 m for the main replay/hierarchy.
+- Route: Fields2Cover `RoutePlannerBase::genRoute`.
+- Path: Fields2Cover `PathPlanning::planPath` with Dubins curves.
+- Complete objective: Fields2Cover PathLength.
+- Per-planner-call timeout: 900 s; timeout is an unresolved execution failure,
+  not model infeasibility.
 
-## Compatibility fallback
+## Runtime interpretation
 
-The adapter first runs stock trapezoidal decomposition. For the documented split/buffer edge case, it repeats the same geometric split while retaining multiple polygon components produced by the tiny post-split numerical repair. It changes adapter compatibility behavior only; no Fields2Cover source is modified.
+The primary runtime evidence uses 18 benchmark-stratified fields, five repeats,
+serial execution and counterbalanced method order. Exhaustive and CLBOS timings
+are end-to-end at the Python-driver level. The fixed Top-10 reference times only
+ten downstream complete evaluations using a precomputed ranking and therefore
+is deliberately favourable and non-equal-scope.
 
-## Interpreting results
-
-Deterministic aggregate counts must match exactly. Linear-interpolation percentiles are used for P90/P95. Timing is environment-sensitive and should be checked for table reconstruction and paired-run structure, not exact seconds across hardware.
+Absolute wall times are hardware dependent; the archived values are the
+authority for the manuscript's reported timing study.
