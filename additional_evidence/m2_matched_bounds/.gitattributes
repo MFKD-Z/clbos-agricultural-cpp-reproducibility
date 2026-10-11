@@ -1,0 +1,2 @@
+# Preserve the archived Windows CSV bytes in the Git object and working tree.
+formal_runs.csv -text

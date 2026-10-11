@@ -1,0 +1,19 @@
+{
+  "run_type": "FORMAL",
+  "n_fields": 18,
+  "repeats_per_method_field": 5,
+  "aggregate_sum_field_medians_lb0_s": 540.8089897469993,
+  "aggregate_sum_field_medians_lb1_s": 513.7938952599999,
+  "lb1_over_lb0_ratio": 0.9500468834668641,
+  "lb1_relative_change_percent": -4.995311653313594,
+  "field_cluster_bootstrap_95pct_ci_lb1_over_lb0": [
+    0.8646302190056946,
+    1.072934097005096
+  ],
+  "median_fieldwise_lb1_over_lb0": 1.0092801904924487,
+  "lb1_faster_field_count": 8,
+  "total_full_calls_lb0": 355,
+  "total_full_calls_lb1": 225,
+  "gate": "INCONCLUSIVE_OR_NOT_FASTER_DO_NOT_CLAIM_E2E_SPEEDUP",
+  "interpretation": "E2E on same executed 18 fields; do not extrapolate to 90 fields or claim floating point certification."
+}
