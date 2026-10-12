@@ -1,0 +1,61 @@
+{
+  "created_asia_shanghai": "2026-10-11T18:43:32.999967+08:00",
+  "gate": "FAIL",
+  "reason": "Three real A3 spatial seam failures at 1e-6 m",
+  "paper_text_status": "PAPER_TEXT_NOT_AVAILABLE",
+  "f2c_head": "92b9f2fcf72d26c44202f9d2ab54fbf25ed87426",
+  "f2c_source_dirty": "",
+  "release_repo_dirty_at_review": "M outputs/figures/figure4_runtime_benefit_cost.pdf\n M outputs/figures/figure4_runtime_benefit_cost.png\n M scripts/reproduce_runtime_figure.py",
+  "adapter_sha256": "348a227182252feb63743fb9cd711fec6dd0a57ce7891b99dda3db4d1ab23658",
+  "original_binary_sha256": "4c89a57f2ffe4d1bd00f42e7743936297217cb2e91971062eaf61f3046712f4c",
+  "linked_library_sha256": "1338ade681056f031806bb1349f3a5cd5392e614a00c5fac3170ec7f3574ceda",
+  "observer_binary_sha256": "fc8490e6614b2796d12b0c7c6370437362778277a8b28694238821e80d7c496d",
+  "predeclared_cases": 133,
+  "valid_finite_cases": 6,
+  "not_run_after_failure": 127,
+  "tolerances": {
+    "spatial_absolute_m": 1e-06,
+    "length_absolute_m": 1e-06,
+    "length_relative": 1e-10,
+    "spatial_sensitivity_m": [
+      1e-05,
+      0.0001
+    ]
+  },
+  "commands": [
+    "g++ -std=c++17 -O2 -I<F2C>/include -I/usr/include/gdal s7_observer.cpp -L<old_build>/fields2cover -lFields2Cover -lgdal -lgeos_c -Wl,-rpath,<old_build>/fields2cover -o s7_observer",
+    "python3 s7_audit.py --smoke --timeout 120",
+    "python3 finalize.py"
+  ],
+  "planned_case_file": "s7_predeclared_cases.json",
+  "source_hashes": {
+    "<ORIGINAL_WORKSPACE>/runner/src/agri_f2c_runner.cpp": "348a227182252feb63743fb9cd711fec6dd0a57ce7891b99dda3db4d1ab23658",
+    "<ORIGINAL_CACHE>/Fields2Cover-build/agri_f2c_runner": "4c89a57f2ffe4d1bd00f42e7743936297217cb2e91971062eaf61f3046712f4c",
+    "<ORIGINAL_CACHE>/Fields2Cover-build/fields2cover/libFields2Cover.so": "1338ade681056f031806bb1349f3a5cd5392e614a00c5fac3170ec7f3574ceda",
+    "<ORIGINAL_WORKSPACE>/s7_pinned_planner_semantics_audit/s7_observer": "fc8490e6614b2796d12b0c7c6370437362778277a8b28694238821e80d7c496d",
+    "<ORIGINAL_WORKSPACE>/s7_pinned_planner_semantics_audit/s7_observer.cpp": "5215cc2399e3bdf5ecc9e018c10bfbe49ee53a0420662d3070cecffebe005682",
+    "<ORIGINAL_WORKSPACE>/s7_pinned_planner_semantics_audit/s7_audit.py": "8113919ede7674c8fec5a5d11901837ec0916254dfb866e6795541968223cef4",
+    "<ORIGINAL_WORKSPACE>/s7_pinned_planner_semantics_audit/finalize.py": "cd5027234e0c77551ab865081d9a2c6a03df8ee373a764049ec5c23bc83597c2"
+  },
+  "file_sha256": {
+    "s7_observer.cpp": "5215cc2399e3bdf5ecc9e018c10bfbe49ee53a0420662d3070cecffebe005682",
+    "s7_observer": "fc8490e6614b2796d12b0c7c6370437362778277a8b28694238821e80d7c496d",
+    "s7_audit.py": "8113919ede7674c8fec5a5d11901837ec0916254dfb866e6795541968223cef4",
+    "finalize.py": "cd5027234e0c77551ab865081d9a2c6a03df8ee373a764049ec5c23bc83597c2",
+    "s7_predeclared_cases.json": "7ef9a439c01d05d1f764e6d1c2d4731196ea1b9400f25f76cfecaf2c7fea85f1",
+    "s7_observations.jsonl": "f40523ebd644e5ed1dc27f1bade2fce8e492209df5dcfa4eecf4ab2d60806423",
+    "s7_case_audits.jsonl": "1fbb2fdaceef92cb93923e1fccc40924f17a39c6765aa662b32e1bdc32c7daf2",
+    "s7_case_results.csv": "f7589ae4466377418fe94938d1e1f5a6590adb406061a147f1916dd571b4d50d",
+    "s7_failures.jsonl": "56d2d813944a61f88595a85bfa6d6a211c65cc70a959a4110ee1f6b2cf569eff",
+    "negative_selftest.json": "87e236b60c55c5f04d2597f1bd15972c73ee4c73110a34a6a083cd91c6e61090",
+    "S7_PINNED_PLANNER_AUDIT.md": "609d99b532373fc73760fd556b0621783efbcdb382df4eb498a4433f11250cab",
+    "stderr.log": "33b14eafbc2ed1e4c2a7aed445d254e5e0744ba8c1d8d872cba16becfc3bffca"
+  },
+  "negative_selftest": {
+    "dropped_generated_swath_detected": true,
+    "inserted_1mm_gap_detected": true,
+    "inflated_state_length_detected": true,
+    "status": "PASS",
+    "disclaimer": "Artificial mutations of copied observations, never planner measurements."
+  }
+}

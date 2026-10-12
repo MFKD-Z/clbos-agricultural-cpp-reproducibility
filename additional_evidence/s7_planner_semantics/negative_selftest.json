@@ -1,0 +1,7 @@
+{
+  "dropped_generated_swath_detected": true,
+  "inserted_1mm_gap_detected": true,
+  "inflated_state_length_detected": true,
+  "status": "PASS",
+  "disclaimer": "Artificial mutations of copied observations, never planner measurements."
+}
